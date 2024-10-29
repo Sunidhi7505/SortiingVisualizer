@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="visualizer-panel">
+            <div id="array"></div>
+        </div>
+        <div id="controls-panel">
+            <h1>Sorting Visualizer</h1>
+            <label for="array-size">Array Size:</label>
+            <input type="number" id="array-size" min="1" max="100" value="20">
+            <label for="order">Order:</label>
+            <select id="order">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <label for="algorithm-select">Algorithm:</label>
+            <select id="algorithm-select">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="quick">Quick Sort</option>
+                <option value="heap">Heap Sort</option>
+            </select>
+            <button id="generate-btn" onclick="generateArray()">Generate Array</button>
+            <button id="sort-btn" onclick="startSorting()">Sort</button>
+            <div id="time-complexity"></div>
+            <div id="winMessage">Sorting Completed!</div>
+            <audio id="click-sound" src="click.mp3"></audio>
+            <audio id="traverse-sound" src="traverse.mp3"></audio>
+            <audio id="over-sound" src="over.mp3"></audio>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
