@@ -21,13 +21,22 @@ function sleep(ms) {
 // Generate random array
 function generateArray() {
     playSound('click-sound');
+
     const size = parseInt(document.getElementById('array-size').value);
+
+    // Check maximum limit
+    if (size > 50) {
+        alert("Maximum 50 elements allowed!");
+        return;
+    }
+
     array = Array.from({ length: size }, () => Math.floor(Math.random() * 100));
 
     // Ensure array values are within bounds for visualization
     const maxArrayValue = Math.max(...array);
     const maxHeight = document.getElementById('array').clientHeight;
     const scaleFactor = maxHeight / Math.max(1, maxArrayValue);
+
     array = array.map(value => value * scaleFactor);
 
     renderArray();
